@@ -9,6 +9,7 @@ from fridaybot.utils import friday_on_cmd
 
 # @register(outgoing=True, pattern="^.q(?: |$)(.*)")
 @friday.on(friday_on_cmd(pattern=r"qbot(?: |$)(.*)"))
+@friday.on(sudo_cmd(pattern=r"qbot", allow_sudo=True))
 async def _(event):
     if event.fwd_from:
         return
