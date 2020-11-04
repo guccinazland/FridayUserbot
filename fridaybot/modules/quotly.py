@@ -4,7 +4,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from fridaybot import bot
-from fridaybot.utils import friday_on_cmd
+from fridaybot.utils import friday_on_cmd, sudo_cmd
 
 
 # @register(outgoing=True, pattern="^.q(?: |$)(.*)")
