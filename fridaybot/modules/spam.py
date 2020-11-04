@@ -5,12 +5,10 @@
 #
 
 from asyncio import wait
-from fridaybot.utils import sudo_cmd
 from telethon import events
 
 
 @friday.on(events.NewMessage(pattern=r"\.spam", outgoing=True))
-@friday.on(sudo_cmd(events.NewMessage(pattern=r"\.spam", allow_sudo=True)))
 async def spammer(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         message = e.text
