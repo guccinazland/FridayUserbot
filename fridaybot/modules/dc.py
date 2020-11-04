@@ -47,10 +47,13 @@ async def _(event):
     except Exception as e:
         dc_id = "`Need a Profile Picture to check **this**`"
         str(e)
-    caption = """<b>Controllo datacenter:<b>
-<b>🎃DC ID</b>: {}
+    caption = """<b>🔎 Datacenter utente: DC{} <b>
+<b>🆔 Telegram ID</b>: <code>{}</code>
+<b>🔗 Link utente permanente</b>: <a href='tg://user?id={}'>Clicca qui</a>
 """.format(
-        dc_id
+        dc_id,
+        user_id,
+        user_id
     )
     message_id_to_reply = event.message.reply_to_msg_id
     if not message_id_to_reply:
